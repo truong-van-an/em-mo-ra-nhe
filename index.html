@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" type="png" href="heart.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Úuuuu òaaaaaa</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url(bgr3.jpg);
+            background-size: cover;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .toast{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: rgba(250, 107, 205, 0.3);
+        }
+        .toast .toast-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 10%;
+            gap: 10px;
+        }
+        .toast .toast-container.active{
+            transform: translateY(-300px);
+        }
+        .toast .text1{
+            transition: 2s;
+        }
+        .toast .text1 h1{
+            font-family: 'Pacifico', cursive;
+            font-size: 2.8em;
+            visibility: hidden;
+            animation: h1 2s forwards;
+            animation-delay: 1s;
+        }
+        @keyframes h1{
+            0%{
+                opacity: 0;
+                transform: translateY(-200px);
+            }
+            100%{
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        }
+        .toast .text1.active{
+            transform: translateY(-300px);
+        }
+        .toast .text2{
+            transition: 2s;
+        }
+        .toast .text2 h2{
+            font-family: 'Pacifico', cursive;
+            font-size: 1.2em;
+            visibility: hidden;
+            animation: h2 2s forwards;
+            animation-delay: 2s;
+        }
+        @keyframes h2{
+            0%{
+                opacity: 0;
+                transform: translateY(-250px);
+            }
+            100%{
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        .toast .text2.active{
+            transform: translateY(-300px);
+        }
+        .btn{
+            margin-top: 20px;
+        }
+        .btn .button--yes{
+            left: 400px;
+            position: absolute;
+            padding: 10px 20px;
+            background: rgb(250, 68, 68);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            animation: yes 2s linear;
+        }
+        @keyframes yes{
+            0%{
+                opacity: 0;
+                transform: translateY(-350px);
+            }
+            50%{
+                opacity: 1;
+                transform: translateY(0px) translateX(-20px) rotate(-30deg);
+            }
+            55%{
+                opacity: 1;
+                transform: translateY(-10px) translateX(-10px) rotate(-15deg);
+            }
+            60%{
+                opacity: 1;
+                transform: translateY(-20px) translateX(0px) rotate(0deg);
+            }
+            65%{
+                opacity: 1;
+                transform: translateY(-10px) translateX(10px) rotate(15deg);
+            }
+            70%{
+                opacity: 1;
+                transform: translateY(0px) translateX(20px) rotate(30deg);
+            }
+            75%{
+                opacity: 1;
+                transform: translateY(-5px) translateX(5px) rotate(15deg);
+            }
+            80%{
+                opacity: 1;
+                transform: translateY(-10px) translateX(0px) rotate(0deg);
+            }
+            85%{
+                opacity: 1;
+                transform: translateY(0px) translateX(-5px) rotate(-15deg);
+            }
+            90%{
+                opacity: 1;
+                transform: translateY(-5px) translateX(0px) rotate(0deg);
+            }
+            95%{
+                opacity: 1;
+                transform: translateY(0px) translateX(5px) rotate(15deg);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+            }
+        }
+        .btn .button--yes:hover{
+            background-color: rgb(255, 1, 162);
+            box-shadow: 2px 2px 5px rgb(255, 1, 162, 0.5);
+        }
+        #yes.active{
+            transform: translateX(600px);
+        }
+        #yes{
+            transition: all 2s;
+        }
+        .btn .button--no{
+            left: 700px;
+            position: absolute;
+            padding: 10px 15px;
+            background: rgb(38, 56, 255);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            animation: no 2s linear;
+        }
+        @keyframes no{
+            0%{
+                opacity: 0;
+                transform: translateY(-350px);
+            }
+            50%{
+                opacity: 1;
+                transform: translateY(0px) translateX(-20px) rotate(-30deg);
+            }
+            55%{
+                opacity: 1;
+                transform: translateY(-10px) translateX(-10px) rotate(-15deg);
+            }
+            60%{
+                opacity: 1;
+                transform: translateY(-20px) translateX(0px) rotate(0deg);
+            }
+            65%{
+                opacity: 1;
+                transform: translateY(-10px) translateX(10px) rotate(15deg);
+            }
+            70%{
+                opacity: 1;
+                transform: translateY(0px) translateX(20px) rotate(30deg);
+            }
+            75%{
+                opacity: 1;
+                transform: translateY(-5px) translateX(5px) rotate(15deg);
+            }
+            80%{
+                opacity: 1;
+                transform: translateY(-10px) translateX(0px) rotate(0deg);
+            }
+            85%{
+                opacity: 1;
+                transform: translateY(0px) translateX(-5px) rotate(-15deg);
+            }
+            90%{
+                opacity: 1;
+                transform: translateY(-5px) translateX(0px) rotate(0deg);
+            }
+            95%{
+                opacity: 1;
+                transform: translateY(0px) translateX(5px) rotate(15deg);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+            }
+        }
+        #no.active{
+            transform: translateX(100px);
+        }
+        .box-mail{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .mail{
+            position: absolute;
+            width: 45%;
+            height: auto;
+            flex-direction: column;
+            text-align: center;
+            background-color: rgb(248, 166, 166);
+            padding: 15px 20px;
+            display: flex;
+            gap: 10px;
+            border-radius: 10px;
+            transform: translateY(-350px);
+            transition: transform 2s;
+            box-shadow: -5px -5px 10px rgba(255,255,255, 0.8),
+                    5px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        .mail .image{
+            position: relative;
+            width: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .mail .image img{
+            width: 100%;
+        }
+        .mail.active{
+            transform: translateY(130px);
+        }
+        .mail h1{
+            font-family: 'Ms Madi', cursive;
+            font-size: 2em;
+        }
+        .mail h1 i{
+            color: red;
+            padding: 0px 20px;
+        }
+        .mail p{
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="toast">
+            <div class="toast-container">
+                <div class="text1">
+                    <h1>Em thích anh phải không nèooo?</h1>
+                </div>
+                <div class="text2">
+                    <h2>Nếu em không trả lời mà thoát ra tức là muốn làm người eo anh rùi đó nha :v</h2>
+                </div>
+                <div class="btn">
+                    <button class="button--yes" id="yes">Em thích Anh nhìu lắm lunnn<33</button>
+                    <button class="button--no" id="no">Mơ đi ôg zà:33</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-mail">
+        <div class="mail">
+            <h1><i class="fa-solid fa-heart"></i>Thế chúng mình iu nhau nhé<333<i class="fa-solid fa-heart"></i></h1>
+            <div class="image">
+                <img src="Picture1.png" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
